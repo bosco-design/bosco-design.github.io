@@ -2,63 +2,114 @@
 <html lang="zh">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Yuchuan Zhang - 作品集</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <style>
+    /* 页面样式 */
     body {
-      font-family: sans-serif;
-      background: #f9f9f9;
-      color: #333;
       margin: 0;
-      padding: 0;
-      text-align: center;
+      font-family: 'Helvetica Neue', sans-serif;
+      background: #f4f4f4;
+      color: #333;
+      cursor: url('https://cur.cursors-4u.net/cursors/cur-9/cur815.cur'), auto; /* 你也可以替换成自己的 PNG/ICO 链接 */
+      overflow-x: hidden;
     }
+
     header {
       background: #222;
       color: white;
-      padding: 3em 1em;
+      text-align: center;
+      padding: 4em 1em;
     }
+
     h1 {
+      font-size: 2.5em;
       margin: 0;
     }
+
+    p {
+      font-size: 1.2em;
+    }
+
     section {
       max-width: 800px;
       margin: 2em auto;
       padding: 1em;
     }
+
     .project {
       background: white;
-      border-radius: 8px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
       margin: 1em 0;
       padding: 1em;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     }
+
     footer {
-      font-size: 0.8em;
+      text-align: center;
+      font-size: 0.9em;
       color: #777;
       margin: 4em 0 2em;
+    }
+
+    /* 漂落图标样式 */
+    .drop {
+      position: absolute;
+      font-size: 24px;
+      animation: fall linear infinite;
+      z-index: 999;
+      pointer-events: none;
+    }
+
+    @keyframes fall {
+      from {
+        transform: translateY(-5vh);
+        opacity: 1;
+      }
+      to {
+        transform: translateY(110vh);
+        opacity: 0;
+      }
     }
   </style>
 </head>
 <body>
+
   <header>
     <h1>Yuchuan Zhang</h1>
-    <p>你是我老婆！</p>
+    <p>欢迎来到我的作品集</p>
   </header>
 
   <section>
     <div class="project">
-      <h2>项目名称一</h2>
-      <p>这是我参与的第一个项目，主要负责视觉设计与活动流程。</p>
+      <h2>项目 A</h2>
+      <p>负责视觉与活动策划。点击查看更多信息。</p>
     </div>
     <div class="project">
-      <h2>项目名称二</h2>
-      <p>这个项目是一次大型展览，我负责了活动现场布置和宣传物料制作。</p>
+      <h2>项目 B</h2>
+      <p>展览设计与品牌识别。包括线下和社交媒体物料。</p>
     </div>
   </section>
 
   <footer>
-    &copy; 2025 Yuchuan Zhang | 联系邮箱：example@email.com
+    &copy; 2025 Yuchuan Zhang | 联系方式：example@email.com
   </footer>
+
+  <!-- JavaScript: 下雨效果 -->
+  <script>
+    const emoji = "💧"; // 可换为 "✨", "🌸", "🎈" 或图片 <img>（需更改生成方式）
+    const count = 30;
+
+    for (let i = 0; i < count; i++) {
+      const drop = document.createElement("div");
+      drop.className = "drop";
+      drop.textContent = emoji;
+      drop.style.left = Math.random() * 100 + "vw";
+      drop.style.animationDuration = (2 + Math.random() * 3) + "s";
+      drop.style.animationDelay = Math.random() * 5 + "s";
+      document.body.appendChild(drop);
+    }
+  </script>
+
 </body>
 </html>
